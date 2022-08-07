@@ -1,0 +1,83 @@
+:root{
+    --col-prim-dark-gray: hsl(0, 0%, 63%); 
+    --col-prim-black: hsl(0, 0%, 0%); 
+    --col-prim-white: hsl(0, 0%, 100%); 
+    --col-prim-very-dark-gray: hsl(0, 0%, 27%);
+    
+    --font-size-def: 16px; 
+    --font-family-def: League Spartan;
+    --font-w-500: 500; 
+    --font-w-600: 600; 
+    --font-w-700: 700; 
+
+    font-family: var(--font-family-def);
+
+}
+
+body{
+    background-color: black;
+}
+
+
+.App{
+    max-width: 1440px;
+    height: 100vh;
+    margin: auto;
+    background-color: white;
+}
+
+p{
+    font-size: var(--font-size-def);
+    color: var(--col-prim-dark-gray);
+    font-weight: var(--font-w-500);
+}
+
+
+.hero-wrap{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+
+
+.nav-wrap{
+    position: absolute;
+}
+
+
+.hero-image{
+
+}
+
+
+.hero-text-wrap{
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.hero-text-title{
+    font-size: clamp(2rem, 3vw, 4rem);
+    font-weight: var(--font-w-600);
+}
+
+
+.hero-text-main{
+
+}
+
+
+.details-wrap{
+
+}
+
+
+.details-text{
+
+}
+
+.details-text-title{
+    font-weight: var(--font-w-700);    
+}
