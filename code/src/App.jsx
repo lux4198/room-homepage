@@ -8,6 +8,9 @@ import heroImageDesktop3 from '../src/images/desktop-image-hero-3.jpg'
 import heroImageMobile1 from '../src/images/mobile-image-hero-1.jpg'
 import heroImageMobile2 from '../src/images/mobile-image-hero-2.jpg'
 import heroImageMobile3 from '../src/images/mobile-image-hero-3.jpg'
+import imageAboutDark from '../src/images/image-about-dark.jpg'
+import imageAboutLight from '../src/images/image-about-light.jpg'
+
 
 /* text */
 
@@ -15,6 +18,11 @@ import {heroTextTitle1, heroTextTitle2, heroTextTitle3, heroTextMain1,
   heroTextMain2, heroTextMain3, detailsTextTitle, detailsTextMain} from '../src/assets/text.js'
 
 /* icons and svgs */
+
+import iconAngleLeft from '../src/images/icon-angle-left.svg'
+import iconAngleRight from '../src/images/icon-angle-right.svg'
+import logo from '../src/images/logo.svg'
+
 
 const iconArrow = () => {
   return(
@@ -32,41 +40,59 @@ function App() {
       <main>
         <div class = "App">
           <div class = 'hero-wrap'>
-            <div class = 'nav-wrap'>
-              <nav>
-
-              </nav>
-            </div>
-            <div class = 'hero-image'>
-              <picture>
+            <nav class = 'nav-wrap'>
+              <img src = {logo} alt = 'logo'/>
+              <div class = 'nav-items-wrap'>
+                <p class = 'nav-item'>home</p>
+                <p class = 'nav-item'>shop</p>
+                <p class = 'nav-item'>about</p>
+                <p class = 'nav-item'>contact</p>
+              </div>
+            </nav>
+            <div class = 'hero-image' style = {{'backgroundImage' : `url(${heroImageDesktop1})`}}>
+              {/* <picture>
                 <source media='(min-width: 700px)' srcSet= {`${heroImageDesktop1}`}/>
                 <source media='(max-width: 700px)' srcSet= {`${heroImageMobile1}`}/>
                 <img src= {`${heroImageMobile1}`} alt = 'hero-image'/>
-              </picture>
+              </picture> */}
             </div>
-            <div class = 'hero-text-wrap'>
-              <h1 class = 'hero-text-title'>
-                {heroTextTitle1}
-              </h1>
-              <p class = 'hero-text-main'>
-                {heroTextMain1}
-              </p>
-              <div class = 'call-to-action'>
-                <p>SHOP NOW {iconArrow()}</p>
+            <div class = 'hero-right-side-wrap'>
+              <div class = 'hero-text-wrap'>
+                <h1 class = 'hero-text-title'>
+                  {heroTextTitle1}
+                </h1>
+                <p class = 'hero-text-main'>
+                  {heroTextMain1}
+                </p>
+                <div class = 'call-to-action'>
+                  <p>SHOP NOW {iconArrow()}</p>
+                </div>
               </div>
-            </div>  
+              <div class = 'slider-button-wrap'>
+                  <div class = 'slider-button'>
+                    <img src = {iconAngleLeft} alt = 'icon-angle-left'/>
+                  </div>
+                  <div class = 'slider-button'>
+                    <img src = {iconAngleRight} alt = 'icon-angle-left'/>
+                  </div>
+                </div>
+            </div>
           </div>
           <div class = 'details-wrap'>
-            <img /> 
-            <div class = 'details-text'>
-              <h1 class = 'details-text-title'>{detailsTextTitle}</h1>
-              <p>{detailsTextMain}</p>
+            <div class = 'details-image' style = {{'backgroundImage' : `url(${imageAboutDark})`}}/>
+            {/* <img src = {imageAboutDark} alt = 'image-about-dark'/>  */}
+            <div class = 'details-text-wrap'>
+              <div class = 'details-text'>
+                <h1 class = 'details-text-title'>{detailsTextTitle}</h1>
+                <p>{detailsTextMain}</p>
+              </div>
             </div>
-            <img />
+            <div class = 'details-image' style = {{'backgroundImage' : `url(${imageAboutLight})`}}/>
+            {/* <img src = {imageAboutLight} alt = 'image-about-light'/> */}
           </div>
         </div>
       </main>
-      <footer style = {{'position' : 'absolute', 'bottom' : '0'}}>
+      <footer style = {{'paddingTop': '1000px'}}>
         <h1>Footer</h1>
       </footer>
     </div>

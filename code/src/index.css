@@ -1,12 +1,12 @@
 /* Basic color/font settings and variables */
 
 :root{
-    --col-prim-dark-gray: hsl(0, 0%, 63%); 
+    --col-prim-dark-gray: hsl(0, 0%, 40%); 
     --col-prim-black: hsl(0, 0%, 0%); 
     --col-prim-white: hsl(0, 0%, 100%); 
     --col-prim-very-dark-gray: hsl(0, 0%, 27%);
     
-    --font-size-def: 16px; 
+    --font-size-def: 15px; 
     --font-family-def: League Spartan;
     --font-w-500: 500; 
     --font-w-600: 600; 

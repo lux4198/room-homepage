@@ -13,7 +13,7 @@ export const heroTextMain3 =  `Our modern furniture store provide a high level o
   to ensure that every product is made as perfect and as consistent as possible. With three decades of 
   experience in this industry, we understand what customers want for their home and office.`
 
-export const detailsTextTitle = 'About our furniture'
+export const detailsTextTitle = 'ABOUT OUR FURNITURE'
 
 export const detailsTextMain =   `Our multifunctional collection blends design and function to suit your individual taste.
   Make each room unique, or pick a cohesive theme that best express your interests and what
