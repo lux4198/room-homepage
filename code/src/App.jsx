@@ -22,6 +22,7 @@ import {heroTextTitle1, heroTextTitle2, heroTextTitle3, heroTextMain1,
 import iconAngleLeft from '../src/images/icon-angle-left.svg'
 import iconAngleRight from '../src/images/icon-angle-right.svg'
 import logo from '../src/images/logo.svg'
+import { useState } from 'react'
 
 
 const iconArrow = () => {
@@ -34,6 +35,19 @@ const iconArrow = () => {
 
 
 function App() {
+
+  const heroImagesDesktop = [heroImageDesktop1, heroImageDesktop2, heroImageDesktop3]
+
+  const [imageSlide, setImageSlide] = useState(0)
+
+  /* functions switch between hero images when user clicks arrows */
+  const nextImage = () => {
+    (imageSlide === 2)? setImageSlide(0) : setImageSlide(imageSlide + 1)
+  }
+
+  const previousImage = () => {
+    (imageSlide === 0)? setImageSlide(2) : setImageSlide(imageSlide - 1)
+  }
 
   return (
     <div>
@@ -49,7 +63,7 @@ function App() {
                 <p class = 'nav-item'>contact</p>
               </div>
             </nav>
-            <div class = 'hero-image' style = {{'backgroundImage' : `url(${heroImageDesktop1})`}}>
+            <div class = 'hero-image' style = {{'backgroundImage' : `url(${heroImagesDesktop[imageSlide]})`}}>
               {/* <picture>
                 <source media='(min-width: 700px)' srcSet= {`${heroImageDesktop1}`}/>
                 <source media='(max-width: 700px)' srcSet= {`${heroImageMobile1}`}/>
@@ -69,10 +83,10 @@ function App() {
                 </div>
               </div>
               <div class = 'slider-button-wrap'>
-                  <div class = 'slider-button'>
+                  <div class = 'slider-button' onClick={() => nextImage()}>
                     <img src = {iconAngleLeft} alt = 'icon-angle-left'/>
                   </div>
-                  <div class = 'slider-button'>
+                  <div class = 'slider-button' onClick={() => previousImage()}>
                     <img src = {iconAngleRight} alt = 'icon-angle-left'/>
                   </div>
                 </div>
