@@ -37,6 +37,7 @@ const iconArrow = () => {
 function App() {
 
   const heroImagesDesktop = [heroImageDesktop1, heroImageDesktop2, heroImageDesktop3]
+  const heroImagesMobile = [heroImageMobile1, heroImageMobile2, heroImageMobile3]
 
   const [imageSlide, setImageSlide] = useState(0)
 
@@ -63,12 +64,20 @@ function App() {
                 <p class = 'nav-item'>contact</p>
               </div>
             </nav>
-            <div class = 'hero-image' style = {{'backgroundImage' : `url(${heroImagesDesktop[imageSlide]})`}}>
+            <div class = 'hero-image' style = {{'backgroundImage' : `url(${(window.innerWidth > 430) ? heroImagesDesktop[imageSlide] : heroImagesMobile[imageSlide]})`}}>
               {/* <picture>
                 <source media='(min-width: 700px)' srcSet= {`${heroImageDesktop1}`}/>
                 <source media='(max-width: 700px)' srcSet= {`${heroImageMobile1}`}/>
                 <img src= {`${heroImageMobile1}`} alt = 'hero-image'/>
               </picture> */}
+              <div class = 'slider-button-wrap'>
+                  <div class = 'slider-button' onClick={() => nextImage()}>
+                    <img src = {iconAngleLeft} alt = 'icon-angle-left'/>
+                  </div>
+                  <div class = 'slider-button' onClick={() => previousImage()}>
+                    <img src = {iconAngleRight} alt = 'icon-angle-left'/>
+                  </div>
+                </div>
             </div>
             <div class = 'hero-right-side-wrap'>
               <div class = 'hero-text-wrap'>
@@ -82,14 +91,6 @@ function App() {
                   <p>SHOP NOW {iconArrow()}</p>
                 </div>
               </div>
-              <div class = 'slider-button-wrap'>
-                  <div class = 'slider-button' onClick={() => nextImage()}>
-                    <img src = {iconAngleLeft} alt = 'icon-angle-left'/>
-                  </div>
-                  <div class = 'slider-button' onClick={() => previousImage()}>
-                    <img src = {iconAngleRight} alt = 'icon-angle-left'/>
-                  </div>
-                </div>
             </div>
           </div>
           <div class = 'details-wrap'>
