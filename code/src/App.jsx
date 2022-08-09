@@ -126,9 +126,6 @@ function App() {
           </div>
         </div>
       </main>
-      <footer style = {{'paddingTop': '1000px'}}>
-        <h1>Footer</h1>
-      </footer>
     </div>
   )
 }
