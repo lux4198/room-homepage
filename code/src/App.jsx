@@ -52,9 +52,12 @@ function App() {
   const heroImagesDesktop = [heroImageDesktop1, heroImageDesktop2, heroImageDesktop3]
   const heroImagesMobile = [heroImageMobile1, heroImageMobile2, heroImageMobile3]
 
+  const heroTextTitles = [heroTextTitle1, heroTextTitle2, heroTextTitle3]
+  const heroTextDetails = [heroTextMain1, heroTextMain2, heroTextMain3]
+
   const [imageSlide, setImageSlide] = useState(0)
 
-  /* functions switch between hero images when user clicks arrows */
+  /* functions switch between hero images and hero text when user clicks arrows */
   const nextImage = () => {
     (imageSlide === 2)? setImageSlide(0) : setImageSlide(imageSlide + 1)
   }
@@ -101,10 +104,10 @@ function App() {
             <div class = 'hero-right-side-wrap'>
               <div class = 'hero-text-wrap'>
                 <h1 class = 'hero-text-title'>
-                  {heroTextTitle1}
+                  {heroTextTitles[imageSlide]}
                 </h1>
                 <p class = 'hero-text-main'>
-                  {heroTextMain1}
+                  {heroTextDetails[imageSlide]}
                 </p>
                 <div class = 'call-to-action'>
                   <p>SHOP NOW {iconArrow()}</p>
